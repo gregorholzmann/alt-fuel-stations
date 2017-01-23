@@ -9,6 +9,7 @@
 
 # env config
 ./environments/environment.ts
+./environments/environment.prod.ts
 
 # IDEs and editors
 /.idea

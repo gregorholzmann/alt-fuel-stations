@@ -3,7 +3,9 @@
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.26.
 
 ## Development server
-- Duplicate and rename `.sample-env` to `.env` and add your Google Maps API key.
+- Duplicate `environments/sample.environment.ts` and rename to `environments/environment.ts`.
+- Duplicate `environments/sample.environment.prod.ts` and rename to `environments/environment.prod.ts`.
+- Add your Google Maps & API.data.gov API KEYS to your new environment files (`environments/environment.prod.ts` & `environments/environment.ts`)
 - Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
