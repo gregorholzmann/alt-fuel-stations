@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { AgmCoreModule } from 'angular2-google-maps/core';
 import { environment } from '../environments/environment';
 
+import { MarkerService} from './marker.service';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -19,7 +21,7 @@ import { environment } from '../environments/environment';
       apiKey: environment.googleApiKey
     })
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ MarkerService],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
