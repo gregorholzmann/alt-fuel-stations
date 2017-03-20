@@ -1,6 +1,7 @@
 import { Injectable }    from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import { environment } from '../environments/environment';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -8,7 +9,7 @@ import { Marker } from './marker';
 
 @Injectable()
 export class MarkerService {
-  private dataUrl = 'https://api.data.gov/nrel/alt-fuel-stations/v1.json?api_key=DLOGqlQBOwdZyPbf1K52ItMac05nFYeWVQncVUdR';  // URL to web api
+  private dataUrl = 'https://api.data.gov/nrel/alt-fuel-stations/v1.json?api_key=' + environment.dataGovApiKey;  // URL to web api
 
   constructor(private http: Http) { }
 
@@ -21,13 +22,13 @@ export class MarkerService {
 
   extractData(res: Response) {
     let body = res.json();
+
     let transData = body.fuel_stations.map(function(station){
       let transStation = {};
       transStation['latitude'] = station.latitude;
       transStation['longitude'] = station.longitude;
       return transStation;
     });
-    console.log(transData);
     return transData || [];
   }
 
